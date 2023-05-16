@@ -52,9 +52,6 @@ public class dataHolder {
         }
         setOnce=true;
     }
-    public List<String> getData(){
-        return name;
-    }
     public void  setData(String newName ,String newEmail,String newNumber){
         name.add(newName);
         email.add(newEmail);
@@ -80,4 +77,12 @@ public class dataHolder {
         return number.get(ind);
     }
 
+
+    public List<String> getData(){
+        return name;
+    }
+    public List<String> getEmailData(){
+        return email;
+    }
+    public List<String> getNumberData(){return number; }
 }

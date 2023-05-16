@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     Switch aSwitch;
     FloatingActionButton addBtton;
     FloatingActionButton deleteBtn;
+    FloatingActionButton saveBtn;
 
     dataHolder holder=new dataHolder();
     List<String> nameData=holder.getData();
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         searchView.setVisibility(View.INVISIBLE);
         addBtton=findViewById(R.id.addBtn);
         deleteBtn=findViewById(R.id.btnDelete);
+        saveBtn=findViewById(R.id.btnSaveCsv);
 
         ArrayAdapter<String> adapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,nameData);
         listView.setAdapter(adapter);
@@ -92,5 +94,14 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplicationContext(),saveActivity.class);
+                startActivity(i);
+            }
+        });
+
     }
 }
